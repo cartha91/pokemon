@@ -1,0 +1,9 @@
+body {
+    font-family: Arial, sans-serif;
+}
+#searchBar {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    margin: 20px auto;
+}
