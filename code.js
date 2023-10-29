@@ -2,7 +2,12 @@ document.getElementById('searchBar').addEventListener('input', function(e) {
     let searchText = e.target.value;
 
     fetch(`https://pokeapi.co/api/v2/pokemon/${searchText}`)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`No Pokémon found with the name "${searchText}"`);
+            }
+            return response.json();
+        })
         .then(data => {
             let pokemonContainer = document.getElementById('pokemonContainer');
             pokemonContainer.innerHTML = `
@@ -12,5 +17,9 @@ document.getElementById('searchBar').addEventListener('input', function(e) {
                 <p>Weight: ${data.weight}</p>
             `;
         })
-        .catch(error => console.error(error));
-    });      
+        .catch(error => {
+            let pokemonContainer = document.getElementById('pokemonContainer');
+            pokemonContainer.innerHTML = `<p>${error.message}</p>`;
+            console.error(error);
+        });
+});
