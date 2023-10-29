@@ -1,9 +1,54 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Press Start 2P', cursive;
+    /* This font is similar to the one used in the Pokémon games */
+    background-color: #3b4cca;
+    /* This color is similar to the background color of the Pokémon games */
+    color: #000;
+    /* This will make the text black, like in the Pokémon games */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 175%;
 }
+
 #searchBar {
     width: 100%;
-    max-width: 600px;
-    padding: 10px;
-    margin: 20px auto;
+    max-width: 1200px;
+    padding: 20px;
+    margin: 40px auto;
+    font-size: 200%;
+}
+
+#searchButton {
+    padding: 10px 20px;
+    font-size: 200%;
+}
+
+#pokemonContainer {
+    text-align: center;
+    background-color: #f8f8f8;
+    /* This will give the Pokémon container a different background color for contrast */
+    padding: 20px;
+    border-radius: 10px;
+    /* This will round the corners of the Pokémon container */
+    width: 75%;
+}
+
+#pokemonContainer img {
+    width: 350px;
+    height: 350px;
+}
+
+#pokemonContainer p {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#pokemonContainer p span {
+    margin-bottom: 15px;
+    /* padding: 10px; */
+
+    border-radius: 5px;
+    background-color: #f8f8f8;
 }
